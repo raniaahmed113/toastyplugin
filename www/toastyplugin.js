@@ -3,6 +3,7 @@ function ToastyPlugin() {}
 // The function that passes work along to native shells
 // Message is a string, duration may be 'long' or 'short'
 ToastyPlugin.prototype.show = function(message, duration, successCallback, errorCallback) {
+  alert(message);
   var options = {};
   options.message = message;
   options.duration = duration;
