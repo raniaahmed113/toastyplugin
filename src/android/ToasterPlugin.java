@@ -9,11 +9,29 @@ import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import android.content.Context;
+import android.content.Intent;
+
+import org.apache.cordova.CordovaWebView;
+import org.apache.cordova.CordovaInterface;
+
 public class ToasterPlugin extends CordovaPlugin {
   private static final String DURATION_LONG = "long";
+   public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+        super.initialize(cordova, webView);
+    }
+	private void openNewActivity(Context context) {
+        Intent intent = new Intent(context, NewActivity.class);
+        this.cordova.getActivity().startActivity(intent);
+    }
   @Override
   public boolean execute(String action, JSONArray args,
     final CallbackContext callbackContext) {
+		Context context = cordova.getActivity().getApplicationContext();
+		 if(action.equals("new_activity")) {
+            this.openNewActivity(context);
+            return true;
+        }
       // Verify that the user sent a 'show' action
       if (!action.equals("show")) {
         callbackContext.error("\"" + action + "\" is not a recognized action.");

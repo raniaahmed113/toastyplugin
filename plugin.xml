@@ -19,13 +19,21 @@
         <clobbers target="window.plugins.toasterPlugin" />
     </js-module>
     <platform name="android">
+	 <framework src="src/android/sdk.gradle" custom="true" type="gradleReference" />
 
+    <resource-file src="Cisco/sdk.aar" target="libs/sdk.aar" />
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="ToasterPlugin">
                 <param name="android-package" value="com.linkdev.cordova.plugin.ToasterPlugin"/>
             </feature>
         </config-file>
-
+ <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:label="New Activity" android:name="com.linkdev.cordova.plugin.ToasterPlugin"></activity>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+    
+        <source-file src="src/android/NewActivity.java" target-dir="src/com/linkdev/cordova/plugin" />
+        <source-file src="src/android/activity_new.xml" target-dir="res/layout"/>
         <source-file src="src/android/ToasterPlugin.java" target-dir="src/com/linkdev/cordova/plugin" />
     </platform>
 </plugin>
