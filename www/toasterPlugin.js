@@ -9,8 +9,8 @@ ToasterPlugin.prototype.show = function(message, duration, successCallback, erro
   options.duration = duration;
   cordova.exec(successCallback, errorCallback, 'ToasterPlugin', 'show', [options]);
 }
-ToasterPlugin.prototype.new_activity = function() {
-    exec(function(res){}, function(err){}, "ToasterPlugin", "new_activity", []);
+ToasterPlugin.prototype.new_activity = function( successCallback, errorCallback) {
+    exec( successCallback, errorCallback, "ToasterPlugin", "new_activity", []);
 
 // Installation constructor that binds ToasterPlugin to window
 ToasterPlugin.install = function() {
