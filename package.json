@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ammarshatta/toaster.git"
+    "url": "git+https://github.com/raniaahmed113/toastyplugin.git"
   },
   "keywords": [
     "Toast",
@@ -29,7 +29,7 @@
   "author": "Stanley Idesis <stan.idesis@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ammarshatta/toaster/issues"
+    "url": "https://github.com/raniaahmed113/toastyplugin/issues"
   },
-  "homepage": "https://github.com/ammarshatta/toaster"
+  "homepage": "https://github.com/raniaahmed113/toastyplugin"
 }

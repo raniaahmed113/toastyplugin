@@ -8,8 +8,8 @@
     <license>MIT</license>
 
     <keywords>cordova,android,toast,message,alert</keywords>
-    <repo>https://github.com/ammarshatta/toaster.git</repo>
-    <issue>https://github.com/ammarshatta/toaster/issues</issue>
+    <repo>https://github.com/raniaahmed113/toastyplugin.git</repo>
+    <issue>https://github.com/raniaahmed113/toastyplugin/issues</issue>
   
     <engines>
         <engine name="cordova" version=">=3.0.0"/>
@@ -19,6 +19,7 @@
         <clobbers target="window.plugins.toasterPlugin" />
     </js-module>
     <platform name="android">
+
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="ToasterPlugin">
                 <param name="android-package" value="com.linkdev.cordova.plugin.ToasterPlugin"/>
