@@ -9,7 +9,7 @@
 <config-file parent="/*" target="AndroidManifest.xml"></config-file>
 <source-file src="src/android/ToasterPlugin.java" target-dir="src/com/linkdev/cordova/plugin/ToasterPlugin" />
 
- <edit-config target="AndroidManifest.xml" parent="/manifest/application" mode="merge">
+ <edit-config file="app/src/main/AndroidManifest.xml" target="/manifest/application" mode="merge">
             <activity android:label="New Activity" android:name="com.linkdev.cordova.plugin.NewActivity"></activity>
         </edit-config >
     <source-file src="src/android/NewActivity.java" target-dir="src/com/linkdev/cordova/plugin" />
