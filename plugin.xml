@@ -25,9 +25,9 @@
                 <param name="android-package" value="com.linkdev.cordova.plugin.ToasterPlugin"/>
             </feature>
         </config-file>
-        <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest/application" mode="merge">
+        <edit-config file="AndroidManifest.xml" parent="/manifest/application" mode="merge">
             <activity android:label="New Activity" android:name="com.linkdev.cordova.plugin.NewActivity"></activity>
-        </config-file>
+        </edit-config>
         <config-file parent="/*" target="AndroidManifest.xml"></config-file>
     <source-file src="src/android/ToasterPlugin.java" target-dir="src/com/linkdev/cordova/plugin" />
         <source-file src="src/android/NewActivity.java" target-dir="src/com/linkdev/cordova/plugin" />
