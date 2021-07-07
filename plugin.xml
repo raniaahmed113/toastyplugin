@@ -1,36 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        id="cordova-plugin-toasterplugin" version="0.0.1">
-    <name>ToasterPlugin</name>
-
-    <description>An Android Cordova plugin that allows users to display simple Toast messages at the bottom of the screen.</description>
-    <license>MIT</license>
-
-    <keywords>cordova,android,toast,message,alert</keywords>
-    <repo>https://github.com/raniaahmed113/toastyplugin.git</repo>
-    <issue>https://github.com/raniaahmed113/toastyplugin/issues</issue>
-  
-    <engines>
-        <engine name="cordova" version=">=3.0.0"/>
-    </engines>
-  
-    <js-module src="www/toasterPlugin.js" name="toasterPlugin">
-        <clobbers target="window.plugins.toasterPlugin" />
-    </js-module>
-    <platform name="android">
-	
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="ToasterPlugin">
-                <param name="android-package" value="com.linkdev.cordova.plugin.ToasterPlugin"/>
-            </feature>
-        </config-file>
-        <edit-config file="AndroidManifest.xml" parent="/manifest/application" mode="merge">
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.linkdev.cordova.plugin" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<name>ToasterPlugin</name>
+<js-module name="ToasterPlugin" src="www/ToasterPlugin.js"><clobbers target="cordova.plugins.ToasterPlugin" /></js-module>
+<platform name="android"><config-file parent="/*" target="res/xml/config.xml">
+<feature name="ToasterPlugin">
+<param name="android-package" value="com.linkdev.cordova.plugin.ToasterPlugin" />
+</feature></config-file>
+<config-file parent="/*" target="AndroidManifest.xml"></config-file>
+<source-file src="src/android/ToasterPlugin.java" target-dir="src/com/linkdev/cordova/plugin/ToasterPlugin" />
+<config-file target="AndroidManifest.xml" parent="/manifest/application">
             <activity android:label="New Activity" android:name="com.linkdev.cordova.plugin.NewActivity"></activity>
-        </edit-config>
-        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
-    <source-file src="src/android/ToasterPlugin.java" target-dir="src/com/linkdev/cordova/plugin" />
-        <source-file src="src/android/NewActivity.java" target-dir="src/com/linkdev/cordova/plugin" />
+        </config-file>
+    <source-file src="src/android/NewActivity.java" target-dir="src/com/linkdev/cordova/plugin" />
         <source-file src="src/android/activity_new.xml" target-dir="res/layout"/>
 		  <resource-file src="src/android/res/drawable-hdpi/ic_action_next_item.png" target="res/drawable-hdpi/ic_action_next_item.png" />
         <resource-file src="src/android/res/drawable-mdpi/ic_action_next_item.png" target="res/drawable-mdpi/ic_action_next_item.png" />
@@ -46,6 +27,4 @@
         <resource-file src="src/android/res/drawable-mdpi/ic_action_remove.png" target="res/drawable-mdpi/ic_action_remove.png" />
         <resource-file src="src/android/res/drawable-xhdpi/ic_action_remove.png" target="res/drawable-xhdpi/ic_action_remove.png" />
         <resource-file src="src/android/res/drawable-xxhdpi/ic_action_remove.png" target="res/drawable-xxhdpi/ic_action_remove.png" />
-        
-    </platform>
-</plugin>
+</platform></plugin>
