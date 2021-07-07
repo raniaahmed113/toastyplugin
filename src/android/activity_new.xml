@@ -7,7 +7,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    tools:context="com.example.sample.plugin.NewActivity">
+    tools:context="com.linkdev.cordova.plugin.NewActivity">
 
     <TextView
         android:layout_width="fill_parent"
@@ -20,6 +20,3 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="77dp" />
 </RelativeLayout>
-6. Now edit PluginName.java in src/android
-
-Now we need to handle th
