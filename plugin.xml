@@ -3,17 +3,21 @@
      <name>ToasterPlugin</name>
       <js-module name="ToasterPlugin" src="www/ToasterPlugin.js"><clobbers target="cordova.plugins.ToasterPlugin" /></js-module>
      <platform name="android">
+
 	  <config-file parent="/*" target="res/xml/config.xml">
         <feature name="ToasterPlugin">
           <param name="android-package" value="com.linkdev.cordova.plugin.ToasterPlugin" />
         </feature>
        </config-file>  
-        <config-file target="AndroidManifest.xml" parent="/*">
-            <activity android:label="New Activity" android:name="com.linkdev.cordova.plugin.NewActivity"></activity>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:label="New Activity" android:name="com.linkdev.cordova.plugin.NewActivity" android:launchMode="singleTask"></activity>
          </config-file>
-		<config-file parent="/*" target="AndroidManifest.xml"></config-file>
+		<config-file parent="/*" target="AndroidManifest.xml">
+		<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+		   <uses-permission android:name="android.permission.INTERNET" />
+		</config-file>
 		<source-file src="src/android/ToasterPlugin.java" target-dir="src/com/linkdev/cordova/plugin/ToasterPlugin" />
-        <source-file src="src/android/NewActivity.java" target-dir="src/com/linkdev/cordova/plugin" />
+        <source-file src="src/android/NewActivity.java" target-dir="src/com/linkdev/cordova/plugin/ToasterPlugin" />
         <source-file src="src/android/activity_new.xml" target-dir="res/layout"/>
 		<resource-file src="src/android/res/drawable-hdpi/ic_action_next_item.png" target="res/drawable-hdpi/ic_action_next_item.png" />
         <resource-file src="src/android/res/drawable-mdpi/ic_action_next_item.png" target="res/drawable-mdpi/ic_action_next_item.png" />
