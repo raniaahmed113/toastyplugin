@@ -1,24 +1,28 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="com.linkdev.cordova.plugin" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
-     <name>ToasterPlugin</name>
-      <js-module name="ToasterPlugin" src="www/ToasterPlugin.js"><clobbers target="cordova.plugins.ToasterPlugin" /></js-module>
-     <platform name="android">
-      <framework src="com.android.support:appcompat-v7:+" />
-	  <config-file parent="/*" target="res/xml/config.xml">
-        <feature name="ToasterPlugin">
-          <param name="android-package" value="com.linkdev.cordova.plugin.ToasterPlugin" />
-        </feature>
-       </config-file>  
-        <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <activity android:label="New Activity" android:name="com.linkdev.cordova.plugin.NewActivity"></activity>
-         </config-file>
-		<config-file parent="/*" target="AndroidManifest.xml">
-		<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-		   <uses-permission android:name="android.permission.INTERNET" />
-		</config-file>
-		<source-file src="src/android/ToasterPlugin.java" target-dir="src/com/linkdev/cordova/plugin" />
-        <source-file src="src/android/NewActivity.java" target-dir="src/com/linkdev/cordova/plugin" />
-        <source-file src="src/android/activity_new.xml" target-dir="res/layout"/>
+<name>ToasterPlugin</name>
+<js-module name="ToasterPlugin" src="www/ToasterPlugin.js">
+  <clobbers target="cordova.plugins.ToasterPlugin" />
+</js-module>
+<platform name="android">
+  <config-file parent="/*" target="res/xml/config.xml">
+    <feature name="ToasterPlugin">
+      <param name="android-package" value="com.linkdev.cordova.plugin.ToasterPlugin" />
+    </feature>
+  </config-file>  
+  <config-file target="AndroidManifest.xml" parent="/manifest/application">
+    <activity android:label="New Activity" android:name="com.linkdev.cordova.plugin.NewActivity"></activity>
+  </config-file>
+  <config-file parent="/*" target="AndroidManifest.xml">
+   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+   <uses-permission android:name="android.permission.INTERNET" />
+   <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+   <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+   <uses-feature android:glEsVersion="0x00020000"android:required="true"/>
+  </config-file>
+  <source-file src="src/android/ToasterPlugin.java" target-dir="src/com/linkdev/cordova/plugin" />
+  <source-file src="src/android/NewActivity.java" target-dir="src/com/linkdev/cordova/plugin" />
+  <source-file src="src/android/activity_new.xml" target-dir="res/layout"/>
 		
-</platform><
-/plugin>
+</platform>
+</plugin>
