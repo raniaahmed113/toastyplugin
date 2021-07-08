@@ -2,15 +2,21 @@ package com.linkdev.cordova.plugin;
 
 import android.content.Context;
 import android.content.Intent;
+import android.Manifest;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.CordovaInterface;
 
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import android.content.pm.PackageManager;
+import org.apache.cordova.PluginResult;
 
 /**
  * This class echoes a string called from JavaScript.
